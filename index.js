@@ -1,12 +1,14 @@
 const express = require("express"); // Import Express.js
 const mongoose = require("mongoose");  // Import Mongoose for MongoDB connection
+const cors = require("cors");
 require("dotenv").config(); // Load environment variables from .env file
 const profileRoutes = require("./routes/profileRoutes");
 const userRoutes = require("./routes/userRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 
 const app = express();  // Create an Express application
-
+app.use(cors()); 
+app.use(express.json());
 app.use(express.json());
 
 
